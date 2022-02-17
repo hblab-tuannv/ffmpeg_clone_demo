@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
+import font_test from '../assets/Roboto-Italic.ttf';
 let ffmpeg = null;
 
 const useStyles = makeStyles({
@@ -87,6 +88,7 @@ function FFmpeg({ args, inFilename, outFilename, mediaType }) {
       await ffmpeg.load();
     }
     ffmpeg.FS('writeFile', inFilename, await fetchFile(file));
+    ffmpeg.FS('writeFile', 'Roboto-Italic.ttf', await fetchFile(font_test));
     setMessage('Start to run command');
     const start = Date.now();
     await ffmpeg.run(...args);

@@ -16,14 +16,14 @@ import vsDark from 'prism-react-renderer/themes/vsDark';
 import FFmpeg from './components/FFmpeg';
 // import DemoLinkCard from './components/DemoLinkCard';
 // import codepen from './assets/codepen.png';
-import font_test from './assets/Roboto-Italic.ttf';
+// import font_test from './assets/Roboto-Italic.ttf';
 
 const TESTDATA_URL = 'https://github.com/ffmpegwasm/testdata';
 
 const CONFIGS = {
   x264: `
 {
-  args: ['-i', 'video.avi', '-vf', "drawtext=fontfile='${window.location.href + font_test}':fontsize=30:text='%{localtime:T}'", '-c:v', 'libx264', 'video.mp4'],
+  args: ['-i', 'video.avi', '-vf', 'drawtext=fontfile=Roboto-Italic.ttf: text=test hihi: fontcolor=red :x=(w-text_w)/2:y=(h-text_h)/2', '-c:v', 'libx264', 'video.mp4'],
   inFilename: 'video.avi',
   outFilename: 'video.mp4',
   mediaType: 'video/mp4',
